@@ -1,16 +1,22 @@
+import Login from "./components/Login";
 
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './index.css'
-import Form from './components/Form'
+import "./index.css";
+import Form from "./components/Form";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from "react";
+
 function App() {
- 
-
   return (
-      <div>
-         <Form/>
-      </div>
-  )
+    <>
+      <Router>
+        <Routes>
+        <Route path="/login" element={<Login />} />
+          <Route path="/Signup" element={<Form />} />
+          <Route path="/" element={<Login />} />
+        </Routes>
+      </Router>
+    </>
+  );
 }
 
-export default App
+export default App;
